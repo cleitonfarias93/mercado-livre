@@ -1,0 +1,28 @@
+@import 'styles/variables.scss';
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 6rem;
+  background-color: $yellow;
+
+  &__input-search {
+    width: 70%;
+    height: 3rem;
+
+    padding: 0.2rem 1rem;
+
+    border: 0.1rem solid $lighter-gray;
+    border-radius: 0.4rem;
+    outline: none;
+    font-size: 1.8rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
