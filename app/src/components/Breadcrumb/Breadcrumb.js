@@ -7,7 +7,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 // Styles
 import './Breadcrumb.scss';
 
-const Breadcrumb = ({ items }) => {
+const Breadcrumb = ({ items = [] }) => {
   const getComponentClasses = (isLastItemOfList) =>
     [
       'breadcrumb__item',
