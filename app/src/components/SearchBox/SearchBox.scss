@@ -2,6 +2,7 @@
 
 .header {
   position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,9 +11,11 @@
   height: 6rem;
   background-color: $yellow;
 
+  z-index: 100;
+
   &__input-search {
     width: 70%;
-    height: 3rem;
+    height: 4rem;
 
     padding: 0.2rem 1rem;
 
@@ -23,6 +26,10 @@
 
     &:focus {
       outline: none;
+    }
+
+    &::placeholder {
+      color: $lighter-gray;
     }
   }
 }

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import i18n from 'i18next';
 import { useHistory } from 'react-router-dom';
+
+// Utils
+import { convertToQueryString } from 'utils/queryString';
 
 // Styles
 import './SearchBox.scss';
@@ -10,9 +14,13 @@ const SearchBox = () => {
   const [searchInput, setSearchInput] = useState('');
 
   const handleClick = () => {
+    const query = convertToQueryString({
+      search: searchInput,
+    });
+
     history.push({
       pathname: '/items',
-      search: `?search=${searchInput}`,
+      search: query,
     });
   };
 
@@ -24,11 +32,11 @@ const SearchBox = () => {
     <header className="header">
       <input
         className="header__input-search"
-        placeholder="Nunca pare de procurar"
+        placeholder={i18n.t('Nunca pare de procurar')}
         onChange={handleChange}
       />
       <button type="button" onClick={handleClick}>
-        Buscar
+        {i18n.t('Buscar')}
       </button>
     </header>
   );
