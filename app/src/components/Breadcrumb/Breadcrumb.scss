@@ -1,0 +1,27 @@
+@import 'styles/variables.scss';
+
+.breadcrumb-nav {
+  width: 100%;
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 0;
+
+    font-size: 1.4rem;
+
+    &__separator {
+      margin: 0 0.5rem;
+    }
+
+    &__item {
+      font-weight: 400;
+      color: $gray;
+
+      &--last-item {
+        font-weight: 700;
+      }
+    }
+  }
+}
