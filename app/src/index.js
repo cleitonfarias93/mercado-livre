@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'styles/index.scss';
 import Routes from 'routes';
 import reportWebVitals from './reportWebVitals';
+
+// Styles
+import 'styles/index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Application configs
 import 'i18n';
