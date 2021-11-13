@@ -4,6 +4,9 @@ import 'styles/index.scss';
 import Routes from 'routes';
 import reportWebVitals from './reportWebVitals';
 
+// Application configs
+import 'i18n';
+
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
