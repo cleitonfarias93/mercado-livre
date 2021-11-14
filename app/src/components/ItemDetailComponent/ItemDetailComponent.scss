@@ -1,0 +1,55 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.item-detail-component {
+  @include flex-layout;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 1rem;
+
+  background-color: $white;
+
+  &__image {
+    width: 18rem;
+    height: 18rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 0.4rem;
+    }
+  }
+
+  &__content {
+    @include flex-layout;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 3;
+
+    margin: 1rem 0 0 1.6rem;
+
+    &__price {
+      font-size: 2.4rem;
+    }
+
+    &__name {
+      margin-top: 3.2rem;
+      font-size: 1.8rem;
+    }
+
+    &__situation {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__address {
+    width: 20rem;
+
+    margin-top: 2rem;
+
+    font-size: 1.2rem;
+  }
+}
