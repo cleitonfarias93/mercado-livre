@@ -28,7 +28,7 @@ const ItemDetail = () => {
       const response = await getItemsById(itemId);
       setItem(response.data?.item);
     } catch (error) {
-      console.log(error);
+      alert(i18n.t('Erro ao tentar buscar item, tente novamente!'));
     } finally {
       setFetching(false);
     }
@@ -98,7 +98,7 @@ const ItemDetail = () => {
             type="button"
             className="item-detail__details__buy-button btn btn-primary"
           >
-            Comprar
+            {i18n.t('Comprar')}
           </button>
         </div>
       </div>
