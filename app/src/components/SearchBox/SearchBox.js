@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { convertToQueryString } from 'utils/queryString';
 
 // Icons
-import MercadoLivreIcon from 'components/Icons/MercadoLivreIcon';
+import MercadoLivreLogo from 'components/MercadoLivreLogo';
 
 // Styles
 import './SearchBox.scss';
@@ -31,6 +31,11 @@ const SearchBox = () => {
     });
   };
 
+  const redirectPage = () => {
+    setSearchInput('');
+    history.push('/');
+  };
+
   const handleChange = (event) => {
     setSearchInput(event.target.value);
   };
@@ -44,16 +49,20 @@ const SearchBox = () => {
   return (
     <header className="header">
       <div className="input-group">
-        <MercadoLivreIcon className="header__icon" />
+        <div className="header__icon" onClick={redirectPage} aria-hidden="true">
+          <MercadoLivreLogo />
+        </div>
         <input
           type="text"
           className="header__input-search form-control"
           placeholder={i18n.t('Nunca pare de procurar')}
           aria-label={i18n.t('Nunca pare de procurar')}
           aria-describedby="basic-addon2"
+          value={searchInput}
           onChange={handleChange}
           onKeyPress={handleKeyDown}
         />
+
         <div className="input-group-append">
           <button
             type="button"
