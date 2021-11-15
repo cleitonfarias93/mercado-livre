@@ -2,12 +2,16 @@
 @import 'styles/mixins.scss';
 
 .spinning {
-  @include flex-layout;
-
   position: absolute;
+  top: 0;
+  left: 0;
+
+  @include flex-layout;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+
   background-color: $white;
+  z-index: 15;
 
   .spinner-border.text-warning {
     width: 4rem;
