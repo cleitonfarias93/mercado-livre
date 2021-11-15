@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import i18n from 'i18next';
 
 // Components
 import Breadcrumb from 'components/Breadcrumb';
@@ -34,8 +35,7 @@ const SearchResult = () => {
       const { data } = await getItems(search);
       setItems(data);
     } catch (error) {
-      // Todo insert alert message
-      console.log(error);
+      alert(i18n.t('Erro ao tentar buscar items, tente novamente!'));
     } finally {
       setFetchingItems(false);
     }
