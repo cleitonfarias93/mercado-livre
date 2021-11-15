@@ -46,6 +46,19 @@
         font-size: 1.2rem;
         margin-left: 0.5rem;
       }
+
+      .icon-free-shipping {
+        margin-left: 1rem;
+        background-color: $green;
+        padding: 0.5rem;
+
+        border-radius: 100%;
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
     }
 
     &__name {

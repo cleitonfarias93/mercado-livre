@@ -5,6 +5,9 @@ import { useHistory } from 'react-router-dom';
 // Components
 import PriceDisplay from 'components/PriceDisplay';
 
+// Icons
+import { GrDeliver } from 'react-icons/gr';
+
 // Styles
 import './ItemDetailComponent.scss';
 
@@ -20,12 +23,15 @@ const ItemDetailComponent = ({ item = {} }) => {
     const decimals = item.price?.decimals;
 
     return (
-      <PriceDisplay
-        className="item-detail-component__content__price"
-        amount={amount}
-        decimals={decimals}
-        symbol="$"
-      />
+      <div className="item-detail-component__content__price">
+        <PriceDisplay amount={amount} decimals={decimals} symbol="$" />
+
+        {item.free_shipping && (
+          <div className="icon-free-shipping">
+            <GrDeliver />
+          </div>
+        )}
+      </div>
     );
   };
 
@@ -57,7 +63,8 @@ ItemDetailComponent.propTypes = {
   item: PropTypes.shape({
     picture: PropTypes.string,
     price: PropTypes.shape({
-      amount: PropTypes.number,
+      amount: PropTypes.string,
+      decimals: PropTypes.string,
       currency: PropTypes.string,
     }),
     title: PropTypes.string,
