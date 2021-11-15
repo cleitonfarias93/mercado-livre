@@ -5,8 +5,11 @@ import { useHistory } from 'react-router-dom';
 // Utils
 import { convertToQueryString } from 'utils/queryString';
 
-// Icons
+// Components
 import MercadoLivreLogo from 'components/MercadoLivreLogo';
+
+// Icons
+import { BsSearch } from 'react-icons/bs';
 
 // Styles
 import './SearchBox.scss';
@@ -70,7 +73,7 @@ const SearchBox = () => {
             onClick={handleSubmit}
             id="basic-addon2"
           >
-            {i18n.t('Buscar')}
+            <BsSearch />
           </button>
         </div>
       </div>

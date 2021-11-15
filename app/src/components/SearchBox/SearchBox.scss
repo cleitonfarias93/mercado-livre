@@ -38,6 +38,12 @@
 
     &__button.input-group-text {
       height: 100%;
+      padding: 0 1rem;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
   &__icon {
