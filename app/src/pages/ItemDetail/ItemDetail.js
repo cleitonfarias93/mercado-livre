@@ -28,17 +28,15 @@ const ItemDetail = () => {
       const response = await getItemsById(itemId);
       setItem(response.data?.item);
     } catch (error) {
-      if (error.response.status === 404) {
-        history.replace('/');
-      }
+      console.log(error);
     } finally {
       setFetching(false);
     }
   };
 
   const getFormattedMessage = () => {
-    const condition = item?.condition;
-    const soldQuantity = item?.sold_quantity;
+    const { condition } = item;
+    const soldQuantity = item.sold_quantity;
     let itemCondition = '';
 
     if (condition === 'new') {
@@ -53,8 +51,8 @@ const ItemDetail = () => {
   };
 
   const renderPrice = () => {
-    const amount = new Intl.NumberFormat('pt-BR').format(item?.price?.amount);
-    const decimals = item?.price?.decimals;
+    const amount = new Intl.NumberFormat('pt-BR').format(item.price?.amount);
+    const decimals = item.price?.decimals;
 
     return (
       <PriceDisplay
@@ -70,24 +68,30 @@ const ItemDetail = () => {
     return <Spinner />;
   }
 
+  if (!fetching && !item) {
+    history.push('/not-found');
+  }
+
   return (
     <>
-      <Breadcrumb items={item?.categories} />
+      <Breadcrumb items={item.categories} />
       <div className="item-detail">
         <div className="item-detail__resume">
           <figure className="item-detail__resume__image">
-            <img src={item?.picture} alt={item?.title} />
+            <img src={item.picture} alt={item.title} />
           </figure>
           <div className="item-detail__resume__description">
-            <span className="description-title">Descrição do produto</span>
-            <span className="description-content">{item?.description}</span>
+            <span className="description-title">
+              {i18n.t('Descrição do produto')}
+            </span>
+            <span className="description-content">{item.description}</span>
           </div>
         </div>
         <div className="item-detail__details">
           <span className="item-detail__details__condition">
             {getFormattedMessage()}
           </span>
-          <span className="item-detail__details__name">{item?.title}</span>
+          <span className="item-detail__details__name">{item.title}</span>
           {renderPrice()}
 
           <button
