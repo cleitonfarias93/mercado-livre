@@ -1,0 +1,13 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+.page-not-found-item {
+  @include flex-layout;
+
+  width: 100%;
+  height: 100vh;
+
+  span {
+    font-size: 4.6rem;
+    color: $gray;
+  }
+}
