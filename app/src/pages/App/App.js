@@ -6,6 +6,8 @@ import SearchBox from 'components/SearchBox/SearchBox';
 
 // Pages
 import SearchResult from 'pages/SearchResult/SearchResult';
+import ItemDetail from 'pages/ItemDetail';
+import NotFoundItem from 'pages/NotFoundItem';
 
 // Styles
 import './App.scss';
@@ -14,7 +16,11 @@ const App = () => (
   <Switch>
     <div className="App">
       <SearchBox />
-      <Route exact path="/items" component={SearchResult} />
+      <div className="App__content">
+        <Route exact path="/items" component={SearchResult} />
+        <Route exact path="/items/:id" component={ItemDetail} />
+        <Route exact path="/not-found" component={NotFoundItem} />
+      </div>
     </div>
   </Switch>
 );
