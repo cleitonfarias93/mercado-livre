@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MercadoLivreIcon({ className }) {
+function MercadoLivreLogo({ className }) {
   return (
     <svg
       width="50pt"
@@ -71,12 +71,12 @@ function MercadoLivreIcon({ className }) {
   );
 }
 
-MercadoLivreIcon.propTypes = {
+MercadoLivreLogo.propTypes = {
   className: PropTypes.string,
 };
 
-MercadoLivreIcon.defaultProps = {
+MercadoLivreLogo.defaultProps = {
   className: '',
 };
 
-export default MercadoLivreIcon;
+export default MercadoLivreLogo;
