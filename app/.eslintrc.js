@@ -24,10 +24,12 @@ module.exports = {
     ],
     'no-param-reassign': 0,
     'no-console': 0,
+    'no-alert': 0,
     'no-underscore-dangle': 0,
     'react/display-name': 0,
     'react/jsx-props-no-spreading': 0,
     'react/forbid-prop-types': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'jsx-a11y/no-static-element-interactions': 0,
   },
 };
