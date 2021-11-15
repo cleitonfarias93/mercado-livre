@@ -41,19 +41,23 @@ const SearchResult = () => {
     }
   };
 
-  const renderSearchResult = () => (
-    <>
-      <Breadcrumb items={items.categories} />
-      {items.items.map((item) => (
-        <ItemDetailComponent key={item.id} item={item} />
-      ))}
-    </>
-  );
+  if (fetchingItems) {
+    return <Spinner />;
+  }
+
+  if (!fetchingItems && !items?.items?.length) {
+    history.push('/not-found');
+  }
 
   return (
-    <div className="search-result">
-      {fetchingItems ? <Spinner /> : renderSearchResult()}
-    </div>
+    <>
+      <Breadcrumb items={items.categories} />
+      <div className="search-result">
+        {items?.items?.map((item) => (
+          <ItemDetailComponent key={item.id} item={item} />
+        ))}
+      </div>
+    </>
   );
 };
 
