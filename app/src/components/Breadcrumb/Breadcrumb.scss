@@ -12,16 +12,21 @@
     margin: 0;
     padding: 1.6rem 0;
 
-    &__separator {
-      margin: 0 0.5rem;
-    }
+    &__container {
+      display: flex;
+      align-items: center;
 
-    &__item {
-      font-weight: 400;
-      color: $gray;
+      &__separator {
+        margin: 0 0.5rem;
+      }
 
-      &--last-item {
-        font-weight: 700;
+      &__item {
+        font-weight: 400;
+        color: $gray;
+
+        &--last-item {
+          font-weight: 700;
+        }
       }
     }
   }
