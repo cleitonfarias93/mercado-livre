@@ -1,0 +1,90 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.item-detail {
+  @include flex-layout;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 3.2rem;
+
+  background-color: $white;
+
+  &__resume {
+    &__image {
+      @include flex-layout;
+      img {
+        max-height: 40rem;
+        max-width: 40rem;
+        border-radius: 0.4rem;
+      }
+    }
+
+    &__description {
+      @include flex-layout-vertical;
+      width: 68rem;
+
+      margin-top: 3.2rem;
+
+      .description-title {
+        font-size: 2.8rem;
+      }
+
+      .description-content {
+        margin-top: 3.2rem;
+
+        font-size: 1.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        color: $gray;
+      }
+    }
+  }
+
+  &__details {
+    @include flex-layout-vertical;
+    width: 35rem;
+    height: 100%;
+
+    &__condition {
+      font-size: 1.4rem;
+    }
+
+    &__name {
+      margin-top: 1.6rem;
+
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    &__price {
+      @include flex-layout;
+      align-items: flex-start;
+
+      margin-top: 3.2rem;
+
+      .price-amount {
+        line-height: 4.5rem;
+        font-size: 4.6rem;
+      }
+
+      .price-decimals {
+        margin-left: 0.5rem;
+
+        line-height: 2.3rem;
+        font-size: 2.3rem;
+      }
+    }
+
+    &__buy-button.btn.btn-primary {
+      width: 100%;
+      height: 5rem;
+
+      margin-top: 3.2rem;
+
+      border-radius: 0.5rem;
+      font-size: 1.6rem;
+    }
+  }
+}
