@@ -11,7 +11,7 @@ module.exports = (router) => {
 const getItems = async (req, res) => {
   log.info(`${req.method} -> ${req.url}`);
 
-  const { q: query } = req?.query;
+  const { q: query } = req.query;
 
   try {
     if (!query) {
@@ -40,7 +40,7 @@ const getItemsById = async (req, res) => {
   } catch (error) {
     log.error(error);
 
-    if (error.response?.status === 404) {
+    if (error.response.status === 404) {
       return res.status(httpStatus.NOT_FOUND).send({
         error: 'Item not found',
       });
