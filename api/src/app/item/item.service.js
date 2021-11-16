@@ -7,7 +7,7 @@ const getItemsByQuery = async (query) => {
   const items = data.results.slice(0, 4);
 
   return {
-    categories: getCategoriesByItemsByItem(data.filters),
+    categories: getCategoriesByItems(data.filters),
     items: buildItemList(items),
   };
 };
@@ -61,7 +61,7 @@ const getPictureUrl = (pictures) => {
   return picture.url;
 };
 
-const getCategoriesByItemsByItem = (filters) => {
+const getCategoriesByItems = (filters) => {
   if (!filters?.length) {
     return;
   }
