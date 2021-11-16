@@ -13,4 +13,10 @@
   padding: 2rem;
 
   background-color: $white;
+
+  .item-detail-component {
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $light-gray;
+    }
+  }
 }
